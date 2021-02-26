@@ -13,7 +13,7 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 - to do: Integrate with DB (mongodb?)
 
 
-`Repository: https://github.com/mengweetan/microservice`
+
 
 [Home Page](http://54.169.144.186/) 
 
@@ -22,6 +22,8 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 
 ```
 
+`Codes here`
+```
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
