@@ -1,29 +1,23 @@
-## Microservice
+### Microservice
 
 Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh-pages/index.md) 
 
 
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+### Version 0.1
 
-- Bulleted
-- List
+- Flask with Rest API end points
+- to do: Integrate with DB (mongodb?)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+`Repository: https://github.com/mengweetan/microservice`
 
-[Link](url) and ![Image](src)
+[Home Page](http://54.169.144.186/) 
+![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
+
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
