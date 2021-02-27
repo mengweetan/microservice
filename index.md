@@ -10,7 +10,7 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 ### Version 0.1
 
 - Flask with Rest API end points
-- to do: Integrate with DB (mongodb?)
+- Integrate with mongodb
 
 
 
@@ -22,11 +22,12 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 
 ## Simple end to end to demo front end to backend db integration
 
-- [Front end Form] (https://973kdg0apb1.typeform.com/to/nhO8rguy)
+## [Front end Form](https://973kdg0apb1.typeform.com/to/nhO8rgu)
 
 
-- Accessing mongodb backend
-[mongodb] (https://cloud.mongodb.com/)
+
+## Accessing mongodb backend 
+- [mongodb](https://cloud.mongodb.com)
 
 - id: dbadmin
 - password bukit_timah
