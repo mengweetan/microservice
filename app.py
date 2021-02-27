@@ -44,8 +44,22 @@ def get_tasks():
 
 
 
+
+
+import requests
+import json, csv
+import pymongo
+import urllib
+
 @app.route('/addmember/', methods=['POST'])
 def create_task():
+
+
+
+
+
+
+
     #if not request.json or not 'title' in request.json:
     #    abort(400)
     #task = {
@@ -56,12 +70,24 @@ def create_task():
     #}
     #tasks.append(task)
     data = request.json
+    print (data)
+    mongo_uri = "mongodb+srv://dbuser:" + urllib.parse.quote("xyzabc") + "@cluster0.pibqa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    client = pymongo.MongoClient(mongo_uri)
+    db = client.psp
+
+
+    l1 = data
+    #f = db.members.insert_many(l)
+    f = db.members.insert_one(l1)
+    print (f)
+
+    '''
     with open("/home/ubuntu/psp-test/myfile.txt", "a+") as fo:
-        #_ =  jsonify(data)
         fo.write(json.dumps(data))
         fo.write('\n')
-    #return jsonify({'task': task}), 201
-    return jsonify(data), 201
+    '''
+
+    return jsonify(str(f)), 201
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)
