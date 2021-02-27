@@ -33,7 +33,7 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 - password bukit_timah
 
 
-`Codes here`
+`[spare text]`
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
