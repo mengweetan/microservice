@@ -7,7 +7,7 @@
 
 # Version 0.1
 
-![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
+![yes](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
 
 #### Simple end to end to demo front end to backend db integration
 
