@@ -20,10 +20,10 @@
 
 ### [Front End Form](https://973kdg0apb1.typeform.com/to/nhO8rguy)
 
-### Accessing mongodb backend 
-- [mongodb](https://cloud.mongodb.com)
+### Accessing mongodb db 
+- [mongodb instance](https://cloud.mongodb.com)
 - id: dbadmin ; password bukit_timah
-
+Need an account. Please request with your email
 
 ********
 
