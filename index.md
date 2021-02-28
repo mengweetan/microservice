@@ -19,12 +19,12 @@
 ### [Test Page](http://54.169.144.186/) 
 
 ### [Front End Form](https://973kdg0apb1.typeform.com/to/nhO8rguy)
+##### Need an account? Please request with your email
 
 ### Accessing mongodb db 
 - [mongodb instance](https://cloud.mongodb.com)
 - id: dbadmin ; password bukit_timah
-
-##### Need an account?. Please request with your email
+##### Need an account? Please request with your email
 
 ********
 
