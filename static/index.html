@@ -28,11 +28,15 @@
   <h6>Data</h6>
   <a href='/members'>Raw Json</a>
   </br>
-  <h6>Chart</h6>
-  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
   </br>
-  <a href='/members/1'><h3>view member whose id is 1</h3></a>
+  <h6>Chart</h6>
 
+  </br>
+  <p id="demo"></p>
+
+<!--
+  <a href='/members/1'><h3>view member whose id is 1</h3></a>
+-->
   </br>
     </br>
       </br>
@@ -55,55 +59,54 @@ crossorigin=""></script>
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 
 <script>
-var request = new XMLHttpRequest()
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'http://54.169.144.186/viz/', true)
-
-request.onload = function () {
-  // Begin accessing JSON data here
-
-  var data = JSON.parse(this.response)
-console.log(data);
-console.log(data['survey']);
-
-function orgNums(input) {
-    return input.reduce((a, b) => {
-      return b in a ? a[b]++ : a[b] = 1, a;
-    }, {});
-}
+//Plotly.newPlot('myDiv', data, layout);
 
 
-console.log(orgNums(data['survey']));
-var newdata = Object.values(orgNums(data['survey']));
-console.log(newdata);
-var _labels = Object.keys(orgNums(data['survey']));
-console.log(_labels);
 
-/*
-  data.forEach((movie) => {
+fetch(`http://54.169.144.186/viz/`)
+      .then(function (response) {
+          return response.text();
+      }).then(function (text) {
 
-    console.log(movie.title)
-  })
-*/
+          console.log('GET response text:');
+          console.log(text);
+          var data = JSON.parse(text)
+        console.log(data);
+        console.log(data['survey']);
+        function orgNums(input) {
+            return input.reduce((a, b) => {
+              return b in a ? a[b]++ : a[b] = 1, a;
+            }, {});
+        }
+        console.log(orgNums(data['survey']));
+        var newdata = Object.values(orgNums(data['survey']));
+        console.log(newdata);
+        var _labels = Object.keys(orgNums(data['survey']));
+        console.log('here!!!')
+        var data = [{
+          values: newdata,
+          labels: _labels,
+          type: 'pie',
+          textinfo: "label+percent",
+           textposition: "outside",
+           automargin: true
+        }];
 
-}
+// https://plotly.com/javascript/pie-charts/
 
-// Send request
-request.send()
+        var layout = {
+          title: 'Sentiment',
+          height: 300,
+          width: 200,
+          showlegend: false,
+          margin: {"t": 0, "b": 0, "l": 0, "r": 0},
+        };
 
-var data = [{
-  values: [1,3],
-  labels: ['yellow','green'],
-  type: 'pie'
-}];
+        Plotly.newPlot('demo', data, layout);
+      });
 
-var layout = {
-  height: 400,
-  width: 500
-};
 
-Plotly.newPlot('myDiv', data, layout);
 </script>
 </body>
 </html>
