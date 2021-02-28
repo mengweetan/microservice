@@ -1,0 +1,33 @@
+:root {--color-jam: black;--color-jam-dim:lightgrey}
+
+body, div {font-family: 'Ropa Sans', Arial, sans-serif; font-size: 0.7rem;}
+#map { height: 80vh;}
+.leaflet-popup-content {font-size: medium; width:max-content;}
+.info-legend {background-color: black; padding:5px; color: white; box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+border-radius: 4px;}
+.info-legend >div >div{display:inline-block; vertical-align: bottom;}
+.input-container {display:flex;}
+.slider.slider-horizontal {width: 100% !important;}
+.slider .tooltip.in { opacity: 1;}
+.slider .tooltip.top {margin-top:-25px ; }
+.slider-handle {background-image:linear-gradient(to bottom,#7e665d 0,#7e665d 100%);}
+.r .slider-selection {background-image:linear-gradient(to bottom,#5D757E 0,#5D757E 100%);}
+.slider-track-low, .slider-track-high,  .r2 .slider-selection {background-image:linear-gradient(to bottom,#b2c1c8 0,#b2c1c8 100%);}
+.slider-disabled .slider-track-low, .slider-disabled .slider-track-high , .slider-disabled  .slider-selection {background-image:linear-gradient(to bottom,#dfdfdf 0,#dfdfdf 100%)}
+
+.c, .d {margin-right:15px; min-width:max-content; font-size:large;}
+#cb1, #cb2 {margin-left:20px}
+
+
+.jam-play, .jam-pause {padding:3px; background-color:  var(--color-jam); color: red;border-radius: 4px;  cursor: pointer;}
+/* .jam-male, .jam-female ,.jam-medical,.jam-home{background-color:  unset; color:black;} */
+.jam.active { color: #007efc;}
+.jam.active.blink {color:lightgoldenrodyellow;}
+.jam.notallowed:hover {cursor:not-allowed;}
+.leaflet-top .my-control { position: absolute; margin-left: 50px; padding:10px; background-color: white; box-shadow: 0 1px 5px rgba(0,0,0,0.65); border-radius: 4px;}
+
+.upload-panel {height:40px;font-size: 1rem;right:0px; top:80px; border-radius: 4px; position: absolute;   padding:10px; background-color: white; box-shadow: 0 1px 5px rgba(0,0,0,0.65);}
+.upload-panel.active{background-color:black;color:white;border: 1px solid grey;}
+
+.dim {background-color:  var(--color-jam-dim); color:white;}
+.leaflet-container.upload-cursor {cursor:pointer;}

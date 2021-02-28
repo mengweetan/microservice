@@ -6,6 +6,16 @@ app = Flask(__name__, static_url_path='/home/ubuntu/psp-test/static/')
 
 from flask import make_response
 
+import requests
+import json, csv
+import pymongo
+import urllib
+
+mongo_uri = "mongodb+srv://dbuser:" + urllib.parse.quote("xyzabc") + "@cluster0.pibqa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+client = pymongo.MongoClient(mongo_uri)
+current_db = client.psp
+
+
 @app.errorhandler(404)
 def not_found(error):
     return make_response(jsonify({'error': 'Not found'}), 404)
@@ -40,16 +50,25 @@ def get_task(id):
 
 @app.route('/members/', methods=['GET'])
 def get_tasks():
-    return jsonify({'members': members})
+    _cursor = current_db.members.find({}, {'_id': False})
+    print (dir(_cursor))
+    _members = list(_cursor)
+    return jsonify({'members':_members})
+
+@app.route('/viz/', methods=['GET'])
+def do_viz():
+    _cursor = current_db.members.find({}, {'_id': False})
+
+    _members = list(_cursor)
+    doc = []
+    for m in _members:
+        doc.append(m.get("form_response").get('answers')[1].get('choice').get('label'))
+    print (doc)
+    return jsonify({'survey':doc})
 
 
 
 
-
-import requests
-import json, csv
-import pymongo
-import urllib
 
 @app.route('/addmember/', methods=['POST'])
 def create_task():
@@ -71,14 +90,12 @@ def create_task():
     #tasks.append(task)
     data = request.json
     print (data)
-    mongo_uri = "mongodb+srv://dbuser:" + urllib.parse.quote("xyzabc") + "@cluster0.pibqa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-    client = pymongo.MongoClient(mongo_uri)
-    db = client.psp
+
 
 
     l1 = data
     #f = db.members.insert_many(l)
-    f = db.members.insert_one(l1)
+    f = current_db.members.insert_one(l1)
     print (f)
 
     '''
