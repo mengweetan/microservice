@@ -1,4 +1,4 @@
-### Microservice
+### Test Page Explaination
 
 Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh-pages/index.md) 
 
@@ -15,7 +15,7 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 
 
 
-- [Home Page](http://54.169.144.186/) 
+- [Main Test Page](http://54.169.144.186/) 
 
 
 - ![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
