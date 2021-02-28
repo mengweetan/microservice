@@ -11,7 +11,7 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 
 - Flask with Rest API end points
 - Integrate with mongodb
-- Show chart using plotly.js (outstanding task is a js promise after get data from rest end point)
+- Integrate chart using plotly.js 
 
 
 
