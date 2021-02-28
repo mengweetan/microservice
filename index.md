@@ -9,24 +9,16 @@
 
 ![yes](https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif)
 
-#### Simple end to end to demo front end to backend db integration
+#### Simple end to end demo
 
-- Flask with Rest API end points
+- TypeForm as Frontend
+- Flask with Rest API end points backend
 - Integrate with mongodb
-- Integrate chart using plotly.js 
+- Integrate chart using plotly.js for visuals 
 
+### [Test Page](http://54.169.144.186/) 
 
-
-
-### [Main Test Page](http://54.169.144.186/) 
-
-
-
-
-
-### [Front end Form](https://973kdg0apb1.typeform.com/to/nhO8rguy)
-
-
+### [Front End Form](https://973kdg0apb1.typeform.com/to/nhO8rguy)
 
 ### Accessing mongodb backend 
 - [mongodb](https://cloud.mongodb.com)
