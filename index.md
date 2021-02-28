@@ -24,7 +24,7 @@
 - [mongodb instance](https://cloud.mongodb.com)
 - id: dbadmin ; password bukit_timah
 
-##### Need an account. Please request with your email
+##### Need an account?. Please request with your email
 
 ********
 
