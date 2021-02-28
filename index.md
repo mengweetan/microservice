@@ -14,12 +14,11 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 - Integrate chart using plotly.js 
 
 
+![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
+
+#### [Main Test Page](http://54.169.144.186/) 
 
 
-- [Main Test Page](http://54.169.144.186/) 
-
-
-- ![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
 
 #### Simple end to end to demo front end to backend db integration
 
