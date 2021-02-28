@@ -9,12 +9,14 @@ Edit Here: [editor on GitHub](https://github.com/mengweetan/microservice/edit/gh
 
 ### Version 0.1
 
+[yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
+
 - Flask with Rest API end points
 - Integrate with mongodb
 - Integrate chart using plotly.js 
 
 
-![yes](https://media.giphy.com/media/NEvPzZ8bd1V4Y/giphy.gif)
+
 
 #### [Main Test Page](http://54.169.144.186/) 
 
