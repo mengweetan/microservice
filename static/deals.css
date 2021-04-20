@@ -1,0 +1,67 @@
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.card-contents1 {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    width: 10rem;
+    border: solid grey 1px;
+    box-shadow:5px 5px 2px 1px rgba(0, 0, 255, .1);
+    font-size: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+
+}
+.card-name , h1{
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-weight: 300;
+    text-align: left;
+    margin: 0.1rem;
+    font-size: 0.9rem;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 1.1rem;
+text-align: center;}
+
+.card-contents {
+  width: 25rem;
+  background: #fff;
+  height: 50%;
+  padding: 15px;
+  border: 1px solid #2a394b;
+  box-shadow: -10px 10px 0px #2a394b;
+
+  position: relative;
+  display: grid;
+  vertical-align: middle;
+  margin-bottom: 30px;
+}
+.card-contents > div {
+  height: 50px;
+}
+
+.card-label {
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-weight: 300px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    color: rgb(255,255,255);
+    width: max-content;
+    text-overflow: clip;
+    padding: 0rem 0.5rem;
+    margin: 1px 0.1rem;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 375px) {
+  .card-contents  {
+  width: 50rem;
+  }
+}

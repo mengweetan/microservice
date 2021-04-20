@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+   <meta charset="utf-8">
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&display=swap" rel="stylesheet">
+
+
+        <style>
+            .flex {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+            .card-contents1 {
+                padding: 0.5rem;
+                margin: 0.5rem;
+                border-radius: 5px;
+                width: 10rem;
+                border: solid grey 1px;
+                box-shadow:5px 5px 2px 1px rgba(0, 0, 255, .1);
+                font-size: 0;
+                display: flex;
+                justify-content: space-evenly;
+                flex-direction: column;
+
+            }
+            .card-name , h1{
+                font-family: 'IBM Plex Mono', sans-serif;
+                font-weight: 300;
+                text-align: left;
+                margin: 0.1rem;
+                font-size: 0.9rem;
+            }
+
+            h1 {
+              font-weight: 500;
+              font-size: 1.1rem;
+            text-align: center;}
+
+            .card-contents {
+              width: 25rem;
+              background: #fff;
+              height: 50%;
+              padding: 15px;
+              border: 1px solid #2a394b;
+              box-shadow: -10px 10px 0px #2a394b;
+
+              position: relative;
+              display: grid;
+              vertical-align: middle;
+              margin-bottom: 30px;
+                margin-left: 5px ;
+            }
+            .card-contents > div {
+              height: 50px;
+            }
+
+            .card-label {
+                font-family: 'IBM Plex Mono', sans-serif;
+                font-weight: 300px;
+                text-align: left;
+                text-transform: uppercase;
+                font-size: 0.6rem;
+                color: rgb(255,255,255);
+                width: max-content;
+                text-overflow: clip;
+                padding: 0rem 0.5rem;
+                margin: 1px 0.1rem;
+                display: inline-block;
+            }
+
+            @media only screen and (max-width: 300px) {
+  .card-contents  {
+    width: 50rem;
+
+  }
+}
+        </style>
+    </head>
+    <body>
+      <h1><b>Pipe Line</b></h1>
+      <br><br>
+        <script type="text/javascript">
+            function displayCards(listResponse) {
+                let response_str = listResponse.responseText;
+                const light_colors = ['yellow'];
+                const colours_to_rgb = {'sky':'rgb(135, 206, 235)'};
+                try {
+                    var response_json = JSON.parse(response_str);
+                } catch (error) {
+                    console.error('Unable to parse response JSON'+error);
+                    var response_json = false;
+                }
+
+                if (response_json && response_json.cards) {
+                    console.log(response_json) // debug
+
+                    var trello_details_div = document.getElementById('trello-response');
+                    var card_container_div = document.getElementById('card-container');
+                    response_json.cards.forEach(function(card) {
+                        var cardBox = document.createElement('div');
+                        var cardName = document.createElement('p');
+                        cardBox.className = 'card-contents';
+                        cardName.className = 'card-name';
+                        cardName.textContent = card.name;
+
+
+                        if (card.labels) {
+                            var labelBox = document.createElement('div');
+                            card.labels.forEach(function(label) {
+                                var labelName = document.createElement('span');
+                                labelName.className = 'card-label';
+                                labelName.textContent = label.name;
+                                if (label.color in colours_to_rgb) {
+                                    labelName.style.backgroundColor = colours_to_rgb[label.color];
+                                } else {
+                                    labelName.style.backgroundColor = label.color;
+                                }
+                                if (light_colors.includes(label.color)) {
+                                    labelName.style.color = 'black';
+                                };
+                                labelBox.appendChild(labelName);
+                            });
+                            cardBox.appendChild(labelBox);
+                        }
+                        cardBox.appendChild(cardName);
+                        card_container_div.appendChild(cardBox);
+                    })
+                }
+            }
+
+            function makeCardNameRequest() {
+                const card_api = 'http://54.169.144.186/dapo-deals'
+                httpRequestCards = new XMLHttpRequest();
+                if (!httpRequestCards) {
+                    console.log('Unable to create a new XMLHttpRequest instance.');
+                    return false;
+                }
+                httpRequestCards.onreadystatechange = requestCardNames;
+                httpRequestCards.open('GET', card_api);
+                httpRequestCards.send();
+            }
+
+            function requestCardNames() {
+                if (httpRequestCards.readyState === XMLHttpRequest.DONE) {
+                    if (httpRequestCards.status === 200) {
+                        console.log("Successful response from custom Trello API!")
+                        displayCards(httpRequestCards);
+                    } else {
+                        console.log('['+httpRequestCards.status+'] There has been an error with the API Call!');
+                        console.log(httpRequestCards.responseText)
+                    }
+                }
+            }
+
+            window.addEventListener('DOMContentLoaded', (event) => {
+                makeCardNameRequest();
+            });
+
+
+
+        </script>
+        <section><div id="trello-response"></div></section>
+        <section id='card-container' class='flex'></section>
+    </body>
+</html>
